@@ -3,7 +3,6 @@
 import { Fragment } from "react";
 import Link from 'next/link'
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import { Input } from "@/components/ui/input"
 import { store } from "@/store";
 import {
@@ -15,16 +14,19 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
+import { Button } from "../ui/button";
 
 export default function Navbar() {
     return (
         <Fragment>
             <NavigationMenuPrimitive.Root className="flex justify-between items-center">
                 <NavigationMenuPrimitive.Item>
-                    <NavigationMenuPrimitive.Trigger className={navigationMenuTriggerStyle()}>
-                    <Link href="/">
-                        Home
-                    </Link>
+                    <NavigationMenuPrimitive.Trigger>
+                    <Button variant="secondary" asChild>
+                        <Link href="/">
+                            Home
+                        </Link>
+                    </Button>
                     </NavigationMenuPrimitive.Trigger>
                 </NavigationMenuPrimitive.Item>
                 <NavigationMenuPrimitive.Item>
