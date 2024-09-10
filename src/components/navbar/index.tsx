@@ -32,13 +32,16 @@ export default function Navbar() {
                 <NavigationMenuPrimitive.Item>
                     <div className="flex items-end justify-end">
                         <div className="flex w-full max-w-sm items-end space-x-2">
-                        <Select>
+                        <Select onValueChange={(value) => {
+                            store.setState(prev => ({ ...prev, filter: value }))
+                        }}>
                             <SelectTrigger className="w-[180px]">
                                 <SelectValue placeholder="Filter on" />
                             </SelectTrigger>
                                 <SelectContent>
                                     <SelectGroup>
                                         <SelectLabel>Groups</SelectLabel>
+                                        <SelectItem value="all">All</SelectItem>
                                         <SelectItem value="student">Student</SelectItem>
                                         <SelectItem value="teacher">Teacher</SelectItem>
                                         </SelectGroup>
