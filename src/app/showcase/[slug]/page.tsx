@@ -24,7 +24,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </strong>
                 <article className="mx-auto w-3/6">
                     <p className="text-center">{article.content}</p>
-                    <Link href={article.url} className={`${buttonVariants({ variant: "outline" })} w-full `}>Link to project site</Link>
+                    <Link href={article.url} className={`${buttonVariants({ variant: "outline" })} w-full mt-3 `}>Link to project site</Link>
                 </article>
             </div>
         </div>
