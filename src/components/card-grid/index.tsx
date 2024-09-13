@@ -8,13 +8,16 @@ import { store } from '@/store'
 import { searchContent } from '@/search'
 import { filterContent } from '@/filter'
 import Image from 'next/image'
+import slugify from '@/utils/generateSlug'
 
 interface IProps {
   content: IContent[]
 }
 
 export default function CardGrid({ content }: IProps) {
+
   const searchStore = useStore(store)
+
   return (
     <div className='mx-5 my-10 grid grid-cols-4 gap-4'>
       {content
@@ -34,7 +37,7 @@ export default function CardGrid({ content }: IProps) {
               alt={item.title}
             />
             <Link
-              href={item.url}
+              href={`/showcase/${slugify(item.title)}`}
               className={`${buttonVariants({ variant: 'outline' })} my-5 w-full`}
             >
               Read More
