@@ -32,7 +32,7 @@ export default function Navbar() {
           </NavigationMenuPrimitive.Trigger>
         </NavigationMenuPrimitive.Item>
         <NavigationMenuPrimitive.Item>
-          {!pathname.includes("showcase") && (
+          {!pathname.includes('showcase') && (
             <div className='flex items-end justify-end'>
               <div className='flex w-full max-w-sm items-end space-x-2'>
                 <Select

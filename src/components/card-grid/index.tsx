@@ -15,7 +15,6 @@ interface IProps {
 }
 
 export default function CardGrid({ content }: IProps) {
-
   const searchStore = useStore(store)
 
   return (
