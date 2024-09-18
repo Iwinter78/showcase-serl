@@ -1,5 +1,5 @@
 import { IContent } from './types/content'
-import { promises as fsPromises } from 'fs'
+import { promises as fsPromises, watch } from 'fs'
 
 export async function fetchContent(): Promise<IContent[] | null> {
   const raw = await fsPromises.readFile('./src/data/content.json', 'utf-8')
@@ -24,3 +24,17 @@ export async function fetchContent(): Promise<IContent[] | null> {
     return null
   }
 }
+
+function watchFile(filePath: string, callback: () => void) {
+  watch(filePath, (eventType) => {
+    if (eventType === 'change') {
+      callback()
+    }
+  })
+}
+
+// Initial fetch
+fetchContent()
+
+// Watch for changes and re-fetch content
+watchFile('./src/data/content.json', fetchContent)
