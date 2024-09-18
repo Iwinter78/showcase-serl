@@ -19,7 +19,6 @@ import { Button } from '../ui/button'
 
 export default function Navbar() {
   const pathname = usePathname()
-  console.log(pathname)
 
   return (
     <Fragment>
@@ -48,7 +47,7 @@ export default function Navbar() {
                       <SelectLabel>Groups</SelectLabel>
                       <SelectItem value='all'>All</SelectItem>
                       <SelectItem value='student'>Student</SelectItem>
-                      <SelectItem value='teacher'>Teacher</SelectItem>
+                      <SelectItem value='teacher'>Researcher</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
