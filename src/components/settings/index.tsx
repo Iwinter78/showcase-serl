@@ -17,9 +17,8 @@ import { Button } from "@/components/ui/button"
 export default function Settings() {
 
   const getPath = usePathname();
-  console.log(getPath);
 
-  const domain = 'https://localhost:3000';
+  const domain = 'http://localhost:3000'; // See if this can be dynamic
   const url = `${domain}${getPath}`;
 
   const [showQRCode, setShowQRCode] = useState(false);
@@ -34,7 +33,7 @@ export default function Settings() {
 
   return (
     <>
-        <div className='flex justify-end'>
+        <div className='absolute top-0 right-0'>
             <DropdownMenu>
                 <DropdownMenuTrigger className='text-4xl'><IoMdSettings /></DropdownMenuTrigger>
                 <DropdownMenuContent>
