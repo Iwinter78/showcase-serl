@@ -1,5 +1,5 @@
 'use client'
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import QrCode from 'react-qr-code';
 import { usePathname } from 'next/navigation';
 
@@ -12,6 +12,7 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
 
+import { Button } from "@/components/ui/button"
 
 export default function Settings() {
 
@@ -19,7 +20,7 @@ export default function Settings() {
   console.log(getPath);
 
   const domain = 'https://localhost:3000';
-  const url = `${domain}/${getPath}`;
+  const url = `${domain}${getPath}`;
 
   const [showQRCode, setShowQRCode] = useState(false);
 
@@ -27,20 +28,33 @@ export default function Settings() {
       setShowQRCode(true);
   }
 
+  const closeModal = () => {
+    setShowQRCode(false);
+}
+
   return (
-    <div className='flex justify-end'>
-        <DropdownMenu>
-            <DropdownMenuTrigger className='text-4xl'><IoMdSettings /></DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuItem>
-                    Kiosk mode
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={generateQRCode}>
-                    Generate QR Code
-                </DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-        {showQRCode && <QrCode value={url} />}
-    </div>
-)
+    <>
+        <div className='flex justify-end'>
+            <DropdownMenu>
+                <DropdownMenuTrigger className='text-4xl'><IoMdSettings /></DropdownMenuTrigger>
+                <DropdownMenuContent>
+                    <DropdownMenuItem>
+                        Kiosk mode
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={generateQRCode}>
+                        Generate QR Code
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
+        </div>
+        {showQRCode && 
+                <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50' onClick={closeModal}>
+                    <div className='bg-white p-6 rounded-lg shadow-lg' onClick={(e) => e.stopPropagation()}>
+                        <QrCode value={url} />
+                        <Button className='w-full mt-2.5' onClick={closeModal}>Close</Button>
+                    </div>
+                </div>
+            }
+    </>
+  )
 }
