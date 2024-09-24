@@ -15,7 +15,7 @@ export async function fetchContent(): Promise<IContent[] | null> {
       'tags',
       'url',
     ]
-    if (!content.every((item) => keys.every((key) => key in item))) {
+    if (!content.every((item) => keys.every((key) => item[key] !== undefined))) {
       throw new Error('Inproper key format')
     }
     return content
@@ -24,17 +24,3 @@ export async function fetchContent(): Promise<IContent[] | null> {
     return null
   }
 }
-
-function watchFile(filePath: string, callback: () => void) {
-  watch(filePath, (eventType) => {
-    if (eventType === 'change') {
-      callback()
-    }
-  })
-}
-
-// Initial fetch
-fetchContent()
-
-// Watch for changes and re-fetch content
-watchFile('./src/data/content.json', fetchContent)
