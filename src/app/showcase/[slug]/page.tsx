@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import Settings from '@/components/settings'
 
-
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params
 
