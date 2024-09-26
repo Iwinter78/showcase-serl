@@ -27,7 +27,7 @@ export default function CardGrid({ content }: IProps) {
             <strong>
               <h1>{item.title}</h1>
             </strong>
-            <p className='text-ellipsis'>{item.description}</p>
+            <p className='line-clamp-4'>{item.description}</p>
             <Image
               className='mx-auto'
               width={250}
