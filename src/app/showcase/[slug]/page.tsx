@@ -25,17 +25,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className='flex flex-col justify-center text-center'>
           <strong>
             <h1 className='text-6xl'>{article.title}</h1>
-            <p className='py-14 text-center'>{article.description}</p>
           </strong>
-          <article className='mx-auto w-3/6'>
-            <p className='text-center'>{article.content}</p>
+          <div className='mx-auto w-3/6'>
+            <p className='py-10 text-center'>{article.description}</p>
             <Link
               href={article.url}
-              className={`${buttonVariants({ variant: 'outline' })} mt-3 w-full `}
+              className={`${buttonVariants({ variant: 'outline' })} mb-6 w-3/4 `}
             >
               Link to project site
             </Link>
-          </article>
+          </div>
         </div>
       </div>
     </>
