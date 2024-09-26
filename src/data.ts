@@ -9,7 +9,6 @@ export async function fetchContent(): Promise<IContent[] | null> {
     const keys: (keyof IContent)[] = [
       'id',
       'title',
-      'content',
       'description',
       'screenshots',
       'tags',
