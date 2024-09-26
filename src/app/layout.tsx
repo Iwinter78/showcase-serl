@@ -17,13 +17,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <div className='flex flex-col h-screen justify-between'>
+        <div className='flex h-screen flex-col justify-between'>
           <header className='h-10'>
             <Navbar />
           </header>
-          <main className='mb-auto h-30'>
-            {children}
-          </main>
+          <main className='h-30 mb-auto'>{children}</main>
           <footer className='h-10'>
             <p className='text-center'>
               &copy; {new Date().getFullYear()} ShowCaseSERL

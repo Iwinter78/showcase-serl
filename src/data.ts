@@ -14,7 +14,9 @@ export async function fetchContent(): Promise<IContent[] | null> {
       'tags',
       'url',
     ]
-    if (!content.every((item) => keys.every((key) => item[key] !== undefined))) {
+    if (
+      !content.every((item) => keys.every((key) => item[key] !== undefined))
+    ) {
       throw new Error('Inproper key format')
     }
     return content

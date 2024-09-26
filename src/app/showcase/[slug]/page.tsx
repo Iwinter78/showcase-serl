@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-    <Settings />
+      <Settings />
       <div className='flex justify-center '>
         <div className='flex flex-col justify-center text-center'>
           <strong>
