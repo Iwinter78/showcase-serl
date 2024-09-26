@@ -1,5 +1,5 @@
 import { IContent } from './types/content'
-import { promises as fsPromises, watch } from 'fs'
+import { promises as fsPromises } from 'fs'
 
 export async function fetchContent(): Promise<IContent[] | null> {
   const raw = await fsPromises.readFile('./src/data/content.json', 'utf-8')
