@@ -47,7 +47,7 @@ export default function Navbar() {
                       <SelectLabel>Groups</SelectLabel>
                       <SelectItem value='all'>All</SelectItem>
                       <SelectItem value='student'>Student</SelectItem>
-                      <SelectItem value='teacher'>Researcher</SelectItem>
+                      <SelectItem value='researcher'>Researcher</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
