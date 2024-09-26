@@ -1,5 +1,6 @@
 import { IContent } from '@/types/content'
 import slugify from '@/utils/generateSlug'
+import Image from 'next/image'
 import { fetchContent } from '@/data'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
@@ -26,8 +27,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <strong>
             <h1 className='text-6xl'>{article.title}</h1>
           </strong>
+          <Image 
+            className='mx-auto m-5'
+            width={250}
+            height={250}
+            src={article.screenshots[0]}
+            alt={article.title}
+          />
           <div className='mx-auto w-3/6'>
-            <p className='py-10 text-center'>{article.description}</p>
+            <p className='py-3 text-center'>{article.description}</p>
             <Link
               href={article.url}
               className={`${buttonVariants({ variant: 'outline' })} mb-6 w-3/4 `}
