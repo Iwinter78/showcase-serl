@@ -27,8 +27,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <strong>
             <h1 className='text-6xl'>{article.title}</h1>
           </strong>
-          <Image 
-            className='mx-auto m-5'
+          <Image
+            className='m-5 mx-auto'
             width={250}
             height={250}
             src={article.screenshots[0]}
