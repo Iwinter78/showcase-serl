@@ -7,4 +7,5 @@ export interface IContent {
   tags: string[]
   url: string
   type: string
+  date: string
 }
