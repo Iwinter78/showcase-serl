@@ -17,11 +17,13 @@ interface IProps {
 export default function CardGrid({ content }: IProps) {
   const searchStore = useStore(store)
 
-  const filteredContent = content
-    .filter((item) => searchContent(item, searchStore.search))
-    .filter((item) => filterContent(item, searchStore.filter))
+  const sortedContent = content.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  const filteredContentCount = filteredContent.length
+  const filteredContent = sortedContent
+      .filter((item) => searchContent(item, searchStore.search))
+      .filter((item) => filterContent(item, searchStore.filter));
+  
+  const filteredContentCount = filteredContent.length;
 
   return (
     <div className='mx-5 my-10'>
