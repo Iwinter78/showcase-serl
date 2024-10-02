@@ -32,7 +32,6 @@ export default function Settings({ article }: { article: IContent}) {
   const closeMetaData = () => {
     setShowMetaData(false)
   }
-  console.log(article);
 
   return (
     <>
