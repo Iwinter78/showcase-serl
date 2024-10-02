@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import QrCode from 'react-qr-code'
 import { IoMdSettings } from 'react-icons/io'
 
@@ -13,7 +13,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { IContent } from '@/types/content'
 
-export default function Settings({ article }: { article: IContent}) {
+export default function Settings({ article }: { article: IContent }) {
   const [showQRCode, setShowQRCode] = useState(false)
   const [showMetaData, setShowMetaData] = useState(false)
 
@@ -45,7 +45,9 @@ export default function Settings({ article }: { article: IContent}) {
             <DropdownMenuItem onClick={generateQRCode}>
               Generate QR Code
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={generateMetaData}>Metadata</DropdownMenuItem>
+            <DropdownMenuItem onClick={generateMetaData}>
+              Metadata
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
