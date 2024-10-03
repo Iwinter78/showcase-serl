@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import QrCode from 'react-qr-code'
 import { IoMdSettings } from 'react-icons/io'
+import Link from 'next/link'
 
 import {
   DropdownMenu,
@@ -41,7 +42,9 @@ export default function Settings({ article }: { article: IContent }) {
             <IoMdSettings />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>Kiosk mode</DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href={`/kiosk/${article.title}`}>Kiosk mode</Link>
+            </DropdownMenuItem>
             <DropdownMenuItem onClick={generateQRCode}>
               Generate QR Code
             </DropdownMenuItem>
