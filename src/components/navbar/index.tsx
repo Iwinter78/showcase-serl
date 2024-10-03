@@ -22,54 +22,56 @@ export default function Navbar() {
 
   return (
     <Fragment>
-      <NavigationMenuPrimitive.Root className='flex items-center justify-between'>
-        <NavigationMenuPrimitive.Item>
-          <NavigationMenuPrimitive.Trigger>
-            <Button variant='secondary' asChild>
-              <Link href='/'>Home</Link>
-            </Button>
-            <Button variant='secondary' asChild>
-              <Link href='/kiosk/all'>Kiosk mode</Link>
-            </Button>
-          </NavigationMenuPrimitive.Trigger>
-        </NavigationMenuPrimitive.Item>
-        <NavigationMenuPrimitive.Item>
+      {!pathname.includes('kiosk') && (
+        <NavigationMenuPrimitive.Root className='flex items-center justify-between'>
+          <NavigationMenuPrimitive.Item>
+            <NavigationMenuPrimitive.Trigger>
+              <Button variant='secondary' asChild>
+                <Link href='/'>Home</Link>
+              </Button>
+              <Button variant='secondary' asChild>
+                <Link href='/kiosk/all'>Kiosk mode</Link>
+              </Button>
+            </NavigationMenuPrimitive.Trigger>
+          </NavigationMenuPrimitive.Item>
           {!pathname.includes('showcase') && (
-            <div className='flex items-end justify-end'>
-              <div className='flex w-full max-w-sm items-end space-x-2'>
-                <Select
-                  onValueChange={(value) => {
-                    store.setState((prev) => ({ ...prev, filter: value }))
-                  }}
-                >
-                  <SelectTrigger className='w-[180px]'>
-                    <SelectValue placeholder='Filter on' />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Groups</SelectLabel>
-                      <SelectItem value='all'>All</SelectItem>
-                      <SelectItem value='student'>Student</SelectItem>
-                      <SelectItem value='researcher'>Researcher</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-                <Input
-                  type='text'
-                  id='search'
-                  onChange={(e) => {
-                    store.setState((prev) => ({
-                      ...prev,
-                      search: e.target.value,
-                    }))
-                  }}
-                  placeholder='Search'
-                />
+            <NavigationMenuPrimitive.Item>
+              <div className='flex items-end justify-end'>
+                <div className='flex w-full max-w-sm items-end space-x-2'>
+                  <Select
+                    onValueChange={(value) => {
+                      store.setState((prev) => ({ ...prev, filter: value }))
+                    }}
+                  >
+                    <SelectTrigger className='w-[180px]'>
+                      <SelectValue placeholder='Filter on' />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Groups</SelectLabel>
+                        <SelectItem value='all'>All</SelectItem>
+                        <SelectItem value='student'>Student</SelectItem>
+                        <SelectItem value='researcher'>Researcher</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  <Input
+                    type='text'
+                    id='search'
+                    onChange={(e) => {
+                      store.setState((prev) => ({
+                        ...prev,
+                        search: e.target.value,
+                      }))
+                    }}
+                    placeholder='Search'
+                  />
+                </div>
               </div>
-            </div>
+            </NavigationMenuPrimitive.Item>
           )}
-        </NavigationMenuPrimitive.Item>
-      </NavigationMenuPrimitive.Root>
+        </NavigationMenuPrimitive.Root>
+      )}
     </Fragment>
   )
 }
