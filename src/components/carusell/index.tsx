@@ -31,15 +31,15 @@ export default function Carusell({ fetchArticle }: { fetchArticle: IContent[] })
                 >
                     <div className="flex justify-center">
                         <div className="flex justify-center items-center flex-col h-full w-3/6">
-                            <h1><strong>{article.title}</strong></h1>
+                            <h1 className="text-6xl"><strong>{article.title}</strong></h1>
                             <Image
-                                className="mx-auto"
+                                className="m-5 mx-auto"
                                 width={300}
                                 height={300}
                                 src={article.screenshots[0]}
                                 alt={article.title}
                             />
-                            <p>{article.description}</p>
+                            <p className="py-3 text-center">{article.description}</p>
                         </div>
                     </div>
                 </div>
