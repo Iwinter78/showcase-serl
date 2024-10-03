@@ -28,6 +28,9 @@ export default function Navbar() {
             <Button variant='secondary' asChild>
               <Link href='/'>Home</Link>
             </Button>
+            <Button variant='secondary' asChild>
+              <Link href='/kiosk/all'>Kiosk mode</Link>
+            </Button>
           </NavigationMenuPrimitive.Trigger>
         </NavigationMenuPrimitive.Item>
         <NavigationMenuPrimitive.Item>
