@@ -4,9 +4,7 @@ import { IContent } from '@/types/content';
 import slugify from '@/utils/generateSlug';
 
 export default async function KioskMode({ params }: { params: { slug: string } }) {
-    let { slug } = params;
-
-    slug = slugify(slug);
+    const { slug } = params;
 
     const fetchArticle = await fetchContent();
 
@@ -22,6 +20,7 @@ export default async function KioskMode({ params }: { params: { slug: string } }
         (article: IContent) => slugify(article.title) === slug
       );
 
+    console.log(article);
     return (
         <Carusell fetchArticle={article ? [article] : []} />
     );

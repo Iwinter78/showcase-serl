@@ -13,6 +13,7 @@ import {
 
 import { Button } from '@/components/ui/button'
 import { IContent } from '@/types/content'
+import slugify from '@/utils/generateSlug'
 
 export default function Settings({ article }: { article: IContent }) {
   const [showQRCode, setShowQRCode] = useState(false)
@@ -43,7 +44,7 @@ export default function Settings({ article }: { article: IContent }) {
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuItem>
-              <Link href={`/kiosk/${article.title}`}>Kiosk mode</Link>
+              <Link href={`/kiosk/${slugify(article.title)}`}>Kiosk mode</Link>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={generateQRCode}>
               Generate QR Code
