@@ -26,10 +26,10 @@ export default function Navbar() {
         <NavigationMenuPrimitive.Root className='flex items-center justify-between'>
           <NavigationMenuPrimitive.Item>
             <NavigationMenuPrimitive.Trigger>
-              <Button variant='secondary' asChild>
+              <Button variant="ghost" asChild>
                 <Link href='/'>Home</Link>
               </Button>
-              <Button variant='secondary' asChild>
+              <Button variant="ghost" asChild>
                 <Link href='/kiosk/all'>Kiosk mode</Link>
               </Button>
             </NavigationMenuPrimitive.Trigger>
