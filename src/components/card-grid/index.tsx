@@ -30,21 +30,22 @@ export default function CardGrid({ content }: IProps) {
   return (
     <div className='mx-5 my-10'>
       <p>Results: {filteredContentCount}</p>
-      <div className='grid grid-cols-3 gap-3'>
+      <div className='grid grid-cols-3 gap-14'>
         {filteredContent.map((item) => (
-          <div key={item.id} className='container mx-auto text-center flex flex-col justify-between'>
-            <div className='flex-grow'>
+          <div key={item.id} className='container h-96 mx-auto text-center flex flex-col justify-between'>
+            <div className='flex-grow overflow-hidden'>
               <strong>
                 <h1>{item.title}</h1>
               </strong>
               <p className='line-clamp-4'>{item.description}</p>
-              <Image
-                className='mx-auto'
-                width={250}
-                height={250}
-                src={item.screenshots[0]}
-                alt={item.title}
-              />
+              <div className='h-56 w-full relative'>
+                <Image
+                  className='object-contain'
+                  layout='fill'
+                  src={item.screenshots[0]}
+                  alt={item.title}
+                />
+              </div>
             </div>
             <Link
               href={`/showcase/${slugify(item.title)}`}
