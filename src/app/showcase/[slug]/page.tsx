@@ -5,6 +5,7 @@ import { fetchContent } from '@/data'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import Settings from '@/components/settings'
+import Slideshow from '@/components/slideshow'
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params
@@ -27,13 +28,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <strong>
             <h1 className='text-6xl'>{article.title}</h1>
           </strong>
-          <Image
-            className='m-5 mx-auto'
-            width={250}
-            height={250}
-            src={article.screenshots[0]}
-            alt={article.title}
-          />
+          <Slideshow images={article.screenshots} />
           <div className='mx-auto w-3/6'>
             <p className='py-3 text-center'>{article.description}</p>
             <Link
