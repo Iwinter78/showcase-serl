@@ -22,6 +22,5 @@ export default async function KioskMode({
     (article: IContent) => slugify(article.title) === slug
   )
 
-  console.log(article)
   return <Carusell fetchArticle={article ? [article] : []} />
 }
