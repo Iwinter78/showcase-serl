@@ -2,7 +2,7 @@
 
 import { IContent } from '@/types/content'
 import Link from 'next/link'
-import { buttonVariants } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { useStore } from '@tanstack/react-store'
 import { store } from '@/store'
 import { searchContent } from '@/search'
@@ -32,6 +32,10 @@ export default function CardGrid({ content }: IProps) {
       <p>Results: {filteredContentCount}</p>
       <div className='grid grid-cols-3 gap-14'>
         {filteredContent.map((item) => (
+          <Link
+            key={item.id}
+            href={`/showcase/${slugify(item.title)}`}
+            >
           <div key={item.id} className='container h-96 mx-auto text-center flex flex-col justify-between'>
             <div className='flex-grow overflow-hidden'>
               <strong>
@@ -47,13 +51,11 @@ export default function CardGrid({ content }: IProps) {
                 />
               </div>
             </div>
-            <Link
-              href={`/showcase/${slugify(item.title)}`}
-              className={`${buttonVariants({ variant: 'outline' })} my-5 w-3/4 self-center`}
-            >
-              Read More
-            </Link>
+              <Button className='mt-1.5' variant="outline">
+                Read More
+              </Button>
           </div>
+          </Link>
         ))}
       </div>
     </div>
