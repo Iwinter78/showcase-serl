@@ -1,6 +1,5 @@
 import { IContent } from '@/types/content'
 import slugify from '@/utils/generateSlug'
-import Image from 'next/image'
 import { fetchContent } from '@/data'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
