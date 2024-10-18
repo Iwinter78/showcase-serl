@@ -29,16 +29,27 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </strong>
           <Slideshow images={article.screenshots} />
           <div className='mx-auto w-3/6'>
+            <p className='text-left'>Date of publication: {article.date}</p>
             <p className='py-3 text-center'>{article.description}</p>
-            <Link
+          </div>
+          <Link
               href={article.url}
-              className={`${buttonVariants({ variant: 'outline' })} mb-6 w-3/4 `}
+              className={`${buttonVariants({ variant: 'outline' })} w-2/6 mx-auto my-4`}
             >
               Link to project site
             </Link>
+          <div className='flex justify-center flex-wrap max-w-lg mx-auto'>
+              {article.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className='bg-gray-200 text-gray-800 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2'
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
     </>
   )
 }
