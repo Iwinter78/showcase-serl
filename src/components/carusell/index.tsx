@@ -2,7 +2,9 @@
 
 import { IContent } from '@/types/content'
 import { useEffect, useState } from 'react'
+import QrCode from 'react-qr-code'
 import Image from 'next/image'
+import slugify from '@/utils/generateSlug'
 
 export default function Carusell({
   fetchArticle,
@@ -25,16 +27,14 @@ export default function Carusell({
   }
 
   return (
-    <div className='relative h-96 w-full'>
+    <div className='relative w-full h-screen overflow-y-auto'>
       {fetchArticle.map((article, index) => (
         <div
           key={article.id}
-          className={`absolute h-full w-full ${
-            index === currentIndex ? '' : 'hidden'
-          }`}
+          className={`relative w-full ${index === currentIndex ? '' : 'hidden'}`}
         >
-          <div className='flex justify-center'>
-            <div className='flex h-full w-3/6 flex-col items-center justify-center'>
+          <div className='flex flex-col items-center min-h-screen'>
+            <div className='flex w-3/6 flex-col items-center justify-center flex-grow'>
               <h1 className='text-6xl'>
                 <strong>{article.title}</strong>
               </h1>
@@ -46,6 +46,9 @@ export default function Carusell({
                 alt={article.title}
               />
               <p className='py-3 text-center'>{article.description}</p>
+            </div>
+            <div className='mt-auto m-4'>
+              <QrCode value={window?.location?.origin + `/showcase/${slugify(article.title)}`} />
             </div>
           </div>
         </div>
