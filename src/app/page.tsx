@@ -8,5 +8,9 @@ export default async function Home() {
   if (!content) {
     return null
   }
-  return <CardGrid content={content} />
+  return (
+    <React.Suspense fallback={<h1>Loading...</h1>}>
+      <CardGrid content={content} />
+    </React.Suspense>
+  )
 }
