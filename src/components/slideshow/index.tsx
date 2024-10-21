@@ -10,6 +10,7 @@ export default function Slideshow({ images }: { images: string[] }) {
   const showSlides = (n: number) => {
     let i
     const slides = document.querySelectorAll('.slide')
+    if (slides.length === 0) return;
     if (n > slides.length) n = 1
     if (n < 1) n = slides.length
     for (i = 0; i < slides.length; i++) {
