@@ -45,7 +45,7 @@ export default function CardGrid({ content }: IProps) {
                 <div className='relative h-56 w-full'>
                   <Image
                     className='object-contain'
-                    layout='fill'
+                    fill
                     src={item.screenshots[0]}
                     alt={item.title}
                   />
