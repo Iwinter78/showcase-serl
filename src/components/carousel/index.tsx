@@ -6,7 +6,7 @@ import QrCode from 'react-qr-code'
 import Image from 'next/image'
 import slugify from '@/utils/generateSlug'
 
-export default function Carusell({
+export default function Carousel({
   fetchArticle,
 }: {
   fetchArticle: IContent[]
