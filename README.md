@@ -1,6 +1,7 @@
 # ShowcaseSERL
 
 ShowcaseSERL is a curated collection of student and researcher- developed projects. It serves as a public portfolio for finished projects and inspires students to contribute their project ideas.
+![Image of the main page of the site](https://github.com/user-attachments/assets/47fc3833-9c6c-43cf-a9f3-26ee1d67ea22)
 
 ## How to use
 
