@@ -47,8 +47,8 @@ export default function Carousel({
               />
               <p className='py-3 text-center'>{article.description}</p>
             </div>
-            <div className='mt-auto m-4'>
-              <QrCode value={window?.location?.origin + `/showcase/${slugify(article.title)}`} />
+            <div className='flex items-center justify-center'>
+              <QrCode value={window?.location?.origin + `/showcase/${slugify(article.title)}`} style={{width: "50%"}} />
             </div>
           </div>
         </div>
