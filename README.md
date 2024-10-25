@@ -11,6 +11,17 @@ which npm
 ```
 If you are getting a result from both the command, you can then procced to the next step. If not, please follow with the next step.
 
+After that, clone the repo by typing the following command in the terminal:
+
+```bash
+git clone git@github.com:Iwinter78/showcase-serl.git
+```
+
+Then move into the cloned directory:
+```bash
+cd showcase-serl
+```
+
 ### Install Node.js
 1. For installing Node.js, please visit their [website](https://nodejs.org/en/download/package-manager)
 
