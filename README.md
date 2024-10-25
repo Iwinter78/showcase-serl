@@ -3,6 +3,23 @@
 ShowcaseSERL is a curated collection of student and researcher- developed projects. It serves as a public portfolio for finished projects and inspires students to contribute their project ideas.
 ![Image of the main page of the site](https://github.com/user-attachments/assets/47fc3833-9c6c-43cf-a9f3-26ee1d67ea22)
 
+## Prerequisite
+In order to get the software to work you need to check that Node and NPM are installed on the system. You can check that by using the following commands:
+```bash
+which node
+which npm
+```
+If you are getting a result from both the command, you can then procced to the next step. If not, please follow with the next step.
+
+### Install Node.js
+1. For installing Node.js, please visit their [website](https://nodejs.org/en/download/package-manager)
+
+1. If you are using Windows, please select "Prebuilt Installer" in the menu. If you are using Linux, please select the "Package Manager" tab in the menu. 
+
+1. Then follow the instructions stated in the screen. 
+
+1. Done! You should now have Node.js and NPM installed.
+
 ## How to use
 
 First, install all the dependencies that are required:
